@@ -1,19 +1,28 @@
 import { WagmiConfig, createConfig, configureChains, mainnet } from 'wagmi';
 import { publicProvider } from 'wagmi/providers/public';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { RainbowKitProvider, ConnectButton, darkTheme } from '@rainbow-me/rainbowkit';
+import { getDefaultWallets, RainbowKitProvider, ConnectButton, darkTheme } from '@rainbow-me/rainbowkit';
 import '@rainbow-me/rainbowkit/styles.css';
 import './App.css';
 import { motion } from 'framer-motion';
+
+const projectId = 'YOUR_PROJECT_ID'; // You'll need to replace this with your WalletConnect project ID
 
 const { chains, publicClient } = configureChains(
   [mainnet],
   [publicProvider()]
 );
 
+const { connectors } = getDefaultWallets({
+  appName: 'Netto Mello',
+  projectId,
+  chains,
+});
+
 const config = createConfig({
   autoConnect: true,
   publicClient,
+  connectors,
 });
 
 const queryClient = new QueryClient();
