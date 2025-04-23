@@ -59,9 +59,10 @@ function App() {
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.4, duration: 0.8 }}
-              >
-                Web3. Estratégia. Automação. A ponte entre o agora e o que vem depois.
+                >
+                Web3. Estratégia. Automação.<br />A ponte entre o agora e o que vem depois.
               </motion.p>
+
               <motion.div
                 initial={{ scale: 0.9, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
