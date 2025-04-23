@@ -1,0 +1,96 @@
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #000;
+  color: white;
+  scroll-behavior: smooth;
+}
+
+a {
+  color: #ec4899;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.glow {
+  position: relative;
+}
+
+.glow::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(45deg, #ec4899, #8b5cf6);
+  filter: blur(15px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+  border-radius: 1rem;
+}
+
+.glow:hover::after {
+  opacity: 0.5;
+}
+
+.hero-grid {
+  background-image: 
+    radial-gradient(circle at center, rgba(236, 72, 153, 0.15) 0%, transparent 70%),
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 100% 100%, 30px 30px, 30px 30px;
+  background-position: center center;
+}
+
+.title-glow {
+  text-shadow: 
+    0 0 20px rgba(236, 72, 153, 0.5),
+    0 0 40px rgba(236, 72, 153, 0.3),
+    0 0 60px rgba(236, 72, 153, 0.2);
+}
+
+.rainbow-btn {
+  position: relative;
+  padding: 2px;
+  border-radius: 9999px;
+  background: linear-gradient(45deg, #ec4899, #8b5cf6);
+  transition: all 0.3s ease;
+}
+
+.rainbow-btn::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(45deg, #ec4899, #8b5cf6);
+  filter: blur(10px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 9999px;
+  z-index: -1;
+}
+
+.rainbow-btn:hover {
+  transform: scale(1.05);
+}
+
+.rainbow-btn:hover::after {
+  opacity: 0.6;
+}
+
+.rainbow-btn > div {
+  border-radius: 9999px !important;
+  background: rgba(0, 0, 0, 0.8) !important;
+}
+
+.rainbow-btn button {
+  background: transparent !important;
+  transition: all 0.3s ease !important;
+  font-weight: 600 !important;
+  color: #ec4899 !important;
+}
+
+.rainbow-btn:hover button {
+  color: #f9a8d4 !important;
+}
